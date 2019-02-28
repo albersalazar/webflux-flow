@@ -9,6 +9,7 @@ import org.springframework.data.mongodb.repository.config.EnableReactiveMongoRep
 public class WebfluxDemoApplication {
 
 	public static void main(String[] args) {
+		System.out.println("cambio de prueba para release");
 		SpringApplication.run(WebfluxDemoApplication.class, args);
 	}
 }
