@@ -77,51 +77,27 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 			<plugin>
-				<groupId>com.amashchenko.maven.plugin</groupId>
-				<artifactId>gitflow-maven-plugin</artifactId>
-				<version>1.11.0</version>
-				<configuration>
-					<skipTestProject>true</skipTestProject>
-					<installProject>false</installProject>
-					<allowSnapshots>false</allowSnapshots>
-					<verbose>false</verbose>
-				</configuration>
-			</plugin>
+		        <groupId>external.atlassian.jgitflow</groupId>
+		        <artifactId>jgitflow-maven-plugin</artifactId>
+		        <version>1.0-m5.1</version>
+		        <configuration>
+		            <flowInitContext>
+		                <masterBranchName>master</masterBranchName>
+		                <developBranchName>develop</developBranchName>
+		                <featureBranchPrefix>feature/</featureBranchPrefix>
+		                <releaseBranchPrefix>release/</releaseBranchPrefix>
+		                <hotfixBranchPrefix>hotfix/</hotfixBranchPrefix>
+		                <versionTagPrefix>version-</versionTagPrefix>
+		            </flowInitContext>
+		            <username>gftalberto@gmail.com</username>
+		            <password>M2c-n3isa</password>
+		            <noDeploy>true</noDeploy>
+		            <squash>true</squash>
+		            <scmCommentPrefix>[RELEASE] </scmCommentPrefix>
+		        </configuration>
+		    </plugin>
 		</plugins>
-		<pluginManagement>
-			<plugins>
-				<!--This plugin's configuration is used to store Eclipse m2e settings 
-					only. It has no influence on the Maven build itself. -->
-				<plugin>
-					<groupId>org.eclipse.m2e</groupId>
-					<artifactId>lifecycle-mapping</artifactId>
-					<version>1.0.0</version>
-					<configuration>
-						<lifecycleMappingMetadata>
-							<pluginExecutions>
-								<pluginExecution>
-									<pluginExecutionFilter>
-										<groupId>io.swagger</groupId>
-										<artifactId>
-											swagger-codegen-maven-plugin
-										</artifactId>
-										<versionRange>
-											[2.2.3,)
-										</versionRange>
-										<goals>
-											<goal>generate</goal>
-										</goals>
-									</pluginExecutionFilter>
-									<action>
-										<ignore></ignore>
-									</action>
-								</pluginExecution>
-							</pluginExecutions>
-						</lifecycleMappingMetadata>
-					</configuration>
-				</plugin>
-			</plugins>
-		</pluginManagement>
+
 	</build>
 
 </project>
